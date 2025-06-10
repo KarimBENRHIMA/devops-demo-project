@@ -6,7 +6,6 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        // MODIF : ton propre dépôt GitHub
         git branch: 'main', url: 'https://github.com/KarimBENRHIMA/devops-demo-project.git'
       }
     }
@@ -31,8 +30,7 @@ pipeline {
 
     stage('Build and Push Docker Image') {
       environment {
-        // MODIF : DockerHub à ton nom d'utilisateur
-        DOCKER_USER = "benrhimakarim"
+        DOCKER_USER = "karimbenrhima"
         DOCKER_IMAGE = "${DOCKER_USER}/demo-java-app:${build_version}"
         REGISTRY_CREDENTIALS = credentials('dockerhub')
       }
@@ -49,7 +47,6 @@ pipeline {
 
     stage('Update Deployment File') {
       environment {
-        // MODIF : ton propre repo et utilisateur
         GIT_REPO_NAME = "devops-demo-project"
         GIT_USER_NAME = "KarimBENRHIMA"
       }
