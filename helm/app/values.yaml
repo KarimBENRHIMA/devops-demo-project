@@ -3,7 +3,7 @@ replicaCount: 2
 image:
   githubID: karimbenrhima
   repository: demo-java-app
-  tag: "V2.0"
+  tag: "V2.1"
   pullPolicy: IfNotPresent
 
 appName: demo-java-app
